@@ -27,7 +27,8 @@ export default class ProfileInfo extends Component {
 const styles = StyleSheet.create({
     profile: {
         flexDirection: 'row',
-        padding: 15
+        padding: 15,
+        backgroundColor: 'white'
     },
     profilePicture: {
         height: 50,

@@ -11,7 +11,7 @@ export default class FloatingActionButton extends Component {
     }
     render(){
         return(
-            <TouchableOpacity style={styles.floatingButton}>
+            <TouchableOpacity onPress={this.props.onPress} style={styles.floatingButton}>
                 <Icon name="add" size={25}/>
             </TouchableOpacity>
         )

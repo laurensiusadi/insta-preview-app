@@ -1,4 +1,4 @@
 import { AppRegistry } from 'react-native';
-import App from './src/App';
+import AppContainer from './src/AppContainer';
 
-AppRegistry.registerComponent('InstaPreviewApp', () => App);
+AppRegistry.registerComponent('InstaPreviewApp', () => AppContainer);

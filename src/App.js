@@ -8,6 +8,7 @@ import Icon from 'react-native-vector-icons/MaterialIcons';
 import ProfileInfo from './components/ProfileInfo';
 import MediaList from './components/MediaList';
 import FloatingActionButton from './components/FloatingActionButton';
+import {Actions} from 'react-native-router-flux';
 
 export default class App extends Component {
 	constructor(props) {
@@ -50,23 +51,9 @@ export default class App extends Component {
 			return (
 				<View style={styles.container}>
 					<StatusBar barStyle="dark-content"/>
-					<View style={styles.navBar}>
-						<View>
-							<TouchableOpacity style={{flexDirection:'row'}}>
-								<Text style={styles.appTitle}>@{data.user.username}</Text>
-								<Icon style={{color:'white'}} name="arrow-drop-down" size={24}/>
-							</TouchableOpacity>		
-						</View>
-						<View>
-							<TouchableOpacity>
-								<Icon style={{color:'white'}} name="add" size={24}/>
-							</TouchableOpacity>
-						</View>
-					</View>
 					<View style={styles.container}>
-						{/* <ProfileInfo user={data.user}/> */}
+						<ProfileInfo user={data.user}/>
 						<MediaList style={{paddingHorizontal: 10}} media={data.user.media.nodes}/>
-						{/* <FloatingActionButton/> */}
 					</View>
 					{/* <View style={styles.tabBar}>
 						<TouchableOpacity style={styles.tabBarItem}>
@@ -98,20 +85,6 @@ const styles = StyleSheet.create({
 	},
 	container: {
 		flex: 1,
-	},
-	navBar: {
-		height: 55,
-		backgroundColor: 'black',
-		elevation: 3,
-		paddingHorizontal: 15,
-		flexDirection: 'row',
-		alignItems: 'center',
-		justifyContent: 'space-between'
-	},
-	appTitle: {
-		color: 'white',
-		fontSize: 18,
-		fontWeight: 'bold'
 	},
 	tabBar: {
 		height: 60,
