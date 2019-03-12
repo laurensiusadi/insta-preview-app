@@ -1,5 +1,5 @@
 {
-  "name": "InstaPreviewApp",
+  "name": "insta-preview-app",
   "version": "0.0.1",
   "private": true,
   "scripts": {
@@ -10,8 +10,9 @@
     "axios": "^0.17.1",
     "react": "16.2.0",
     "react-native": "0.53.0",
+    "react-native-config": "^0.11.7",
     "react-native-fast-image": "^2.2.5",
-    "react-native-router-flux": "^4.0.0-beta.28",
+    "react-native-router-flux": "^4.0.6",
     "react-native-vector-icons": "^4.5.0",
     "react-redux": "^5.0.7",
     "redux": "^3.7.2"

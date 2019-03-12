@@ -7,17 +7,17 @@ import Icon from 'react-native-vector-icons/MaterialIcons';
 
 export default class ProfileInfo extends Component {
     render(){
-        let user = this.props.user;
+        const { user } = this.props
         return (
             <View style={styles.profile}>
-                <Image source={{ uri: user.profile_pic_url}} style={styles.profilePicture}/>
-                <View style={{paddingLeft: 15}}>
+                <Image source={{ uri: user.profile_picture}} style={styles.profilePicture}/>
+                <View style={{paddingLeft: 15, justifyContent: 'center' }}>
                     <Text style={{fontSize: 24, paddingBottom: 2}}>{user.username}</Text>
-                    <View style={{flexDirection: 'row'}}>
-                        <Text style={{fontWeight: 'bold'}}>{user.media.count}</Text><Text> posts</Text>
-                        <Text style={{fontWeight: 'bold', paddingLeft: 12}}>{user.followed_by.count}</Text><Text> followers</Text>
-                        <Text style={{fontWeight: 'bold', paddingLeft: 12}}>{user.follows.count}</Text><Text> following</Text>
-                    </View>
+                    {/* <View style={{flexDirection: 'row'}}>
+                        <Text style={{fontWeight: 'bold'}}>{user.counts.media}</Text><Text> posts</Text>
+                        <Text style={{fontWeight: 'bold', paddingLeft: 12}}>{user.counts.followed_by}</Text><Text> followers</Text>
+                        <Text style={{fontWeight: 'bold', paddingLeft: 12}}>{user.counts.follows}</Text><Text> following</Text>
+                    </View> */}
                 </View>
             </View>
         )

@@ -1,59 +1,55 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 import {
-	Platform, StyleSheet, Text, View, Image,
-	TouchableOpacity, ActivityIndicator, StatusBar
-} from 'react-native';
-import axios from 'axios';
-import Icon from 'react-native-vector-icons/MaterialIcons';
-import ProfileInfo from './components/ProfileInfo';
-import MediaList from './components/MediaList';
-import FloatingActionButton from './components/FloatingActionButton';
-import {Actions} from 'react-native-router-flux';
+	StyleSheet, View, ActivityIndicator, StatusBar, TouchableOpacity, Text
+} from 'react-native'
+import axios from 'axios'
+import ProfileInfo from '../components/ProfileInfo'
+import MediaList from '../components/MediaList'
+import Icon from 'react-native-vector-icons/MaterialIcons'
+import Config from 'react-native-config'
 
 export default class App extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			isLoading: true,
-			dataSource: []
+			loaded: false,
+			user: null,
+			feed: null,
+			comments: [],
 		};
 	}
 	
-	componentWillMount() {
-		let username = 'laurensiusadi_';
-		const baseUrl = 'https://www.instagram.com/' + username +'/?__a=1';
-		axios.get(baseUrl)
-		 .then((response) => {
-			 this.setState({
-				 isLoading: false,
-				 dataSource: response.data
-				});
-		 })
-		.catch((error)=>{
-			 console.warn(error);
-		});
+	async componentWillMount() {
+		const userUrl = 'https://api.instagram.com/v1/users/self?access_token=' + Config.ACCESS_TOKEN
+		const feedUrl = 'https://api.instagram.com/v1/users/self/media/recent/?access_token=' + Config.ACCESS_TOKEN
+		console.log('request', userUrl)
+		let userResponse = await axios.get(userUrl)
+		let feedResponse = await axios.get(feedUrl)
+		console.log('user', userResponse)
+		console.log('feed', feedResponse)
+		this.setState({	loaded: true,	user: userResponse.data.data, feed: feedResponse.data.data })
 	}
 
 	render() {
-		if (this.state.isLoading) {
+		const { user, feed, loaded } = this.state
+		if (!loaded) {
 			return (
 				<View style={styles.activityIndicatorContainer}>
 					<ActivityIndicator
-							animating={true}
-							style={[{height: 100}]}
-							size="large"
+						animating={true}
+						style={[{height: 100}]}
+						size="large"
 					/>
 				</View>
 			)
 		}
 		else {
-			let data = this.state.dataSource;
 			return (
 				<View style={styles.container}>
 					<StatusBar barStyle="dark-content"/>
 					<View style={styles.container}>
-						<ProfileInfo user={data.user}/>
-						<MediaList style={{paddingHorizontal: 10}} media={data.user.media.nodes}/>
+						<ProfileInfo user={user}/>
+						<MediaList style={{paddingHorizontal: 10}} media={feed}/>
 					</View>
 					{/* <View style={styles.tabBar}>
 						<TouchableOpacity style={styles.tabBarItem}>

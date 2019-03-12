@@ -1,13 +1,13 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 import {
   Alert, Platform, StyleSheet, Text, View, Image, Dimensions,
   TouchableHighlight, FlatList
-} from 'react-native';
-import FastImage from 'react-native-fast-image';
-import Icon from 'react-native-vector-icons/MaterialIcons';
+} from 'react-native'
+import FastImage from 'react-native-fast-image'
+import Icon from 'react-native-vector-icons/MaterialIcons'
 
-const { width, height } = Dimensions.get('window');
-const equalWidth = ( width / 3 ) - 1;
+const { width, height } = Dimensions.get('window')
+const equalWidth = width / 3
 const styles = StyleSheet.create({
     container: {
         flex: 1,
@@ -20,15 +20,15 @@ const styles = StyleSheet.create({
         margin: 3,
         backgroundColor: 'lightgrey',
     }
-});
+})
 
 export default class MediaList extends Component {
-    _keyExtractor = (item, index) => item.id;
+    _keyExtractor = (item, index) => item.id
 
     renderRowItem = ({item}) => {
         return (
           <TouchableHighlight underlayColor="white" onPress={() => this._onPressImage(item)}>
-            <FastImage style={{ height: equalWidth,  width: equalWidth, margin: 1 }} source={{ uri: item.thumbnail_src,
+            <FastImage style={{ height: equalWidth, width: equalWidth }} source={{ uri: item.images.low_resolution.url,
             priority: FastImage.priority.normal }} resizeMode={FastImage.resizeMode.cover} />
           </TouchableHighlight>
         )
@@ -47,6 +47,6 @@ export default class MediaList extends Component {
                 keyExtractor={this._keyExtractor}
                 numColumns={3} />
             </View>
-        );
+        )
     }
 }
