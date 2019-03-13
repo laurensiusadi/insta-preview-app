@@ -19,9 +19,9 @@ export default class App extends Component {
 		};
 	}
 	
-	async componentWillMount() {
-		const userUrl = 'https://api.instagram.com/v1/users/self?access_token=' + Config.ACCESS_TOKEN
-		const feedUrl = 'https://api.instagram.com/v1/users/self/media/recent/?access_token=' + Config.ACCESS_TOKEN
+	async componentDidMount() {
+		const userUrl = 'https://api.instagram.com/v1/users/self?access_token=' + '449212748.f2f0c1d.e819ff8e4d34468ba7d79c7cc458cf11'
+		const feedUrl = 'https://api.instagram.com/v1/users/self/media/recent/?access_token=' + '449212748.f2f0c1d.e819ff8e4d34468ba7d79c7cc458cf11'
 		console.log('request', userUrl)
 		let userResponse = await axios.get(userUrl)
 		let feedResponse = await axios.get(feedUrl)

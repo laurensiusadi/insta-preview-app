@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import { View } from 'react-native'
+import { View, StatusBar } from 'react-native'
 import { Router, Scene } from 'react-native-router-flux'
 
 import Home from './layout/Home'
@@ -10,6 +10,7 @@ export default class AppContainer extends Component {
   render() {
     return (
       <View style={{flex:1}}>
+        <StatusBar backgroundColor='white' barStyle='dark-content' />
         <Router>
           <Scene key="root">
             <Scene key="Home" component={Home} title="Home" navBar={CustomNavBar} initial/>
