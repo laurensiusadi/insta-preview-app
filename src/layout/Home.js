@@ -6,7 +6,6 @@ import axios from 'axios'
 import ProfileInfo from '../components/ProfileInfo'
 import MediaList from '../components/MediaList'
 import Icon from 'react-native-vector-icons/MaterialIcons'
-import Config from 'react-native-config'
 
 export default class App extends Component {
 	constructor(props) {
@@ -27,7 +26,12 @@ export default class App extends Component {
 		let feedResponse = await axios.get(feedUrl)
 		console.log('user', userResponse)
 		console.log('feed', feedResponse)
-		this.setState({	loaded: true,	user: userResponse.data.data, feed: feedResponse.data.data })
+		if(userResponse.status === 200) {
+			this.setState({ loaded: true, user: userResponse.data.data })
+		}
+		if(feedResponse.status === 200) {
+			this.setState({	loaded: true, feed: feedResponse.data.data })
+		}
 	}
 
 	render() {

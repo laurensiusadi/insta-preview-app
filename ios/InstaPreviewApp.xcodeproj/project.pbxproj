@@ -318,6 +318,7 @@
 		269286554FE4451CA6A214D7 /* ReactNativeConfig.xcodeproj */ = {isa = PBXFileReference; name = "ReactNativeConfig.xcodeproj"; path = "../node_modules/react-native-config/ios/ReactNativeConfig.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
 		CC3AB25EC9EF4E4793CD8B62 /* libReactNativeConfig.a */ = {isa = PBXFileReference; name = "libReactNativeConfig.a"; path = "libReactNativeConfig.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
 		56C8103E76B746AB9086BBBD /* libReactNativeConfig-tvOS.a */ = {isa = PBXFileReference; name = "libReactNativeConfig-tvOS.a"; path = "libReactNativeConfig-tvOS.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
+		6F2A6D55827C465BA0D6AD43 /* ReactNativeConfig.xcodeproj */ = {isa = PBXFileReference; name = "ReactNativeConfig.xcodeproj"; path = "../node_modules/react-native-config/ios/ReactNativeConfig.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -530,6 +531,7 @@
 				EECB4F064D6A43C78934C9BE /* RNVectorIcons.xcodeproj */,
 				B3529734256743E59FFB4498 /* FastImage.xcodeproj */,
 				269286554FE4451CA6A214D7 /* ReactNativeConfig.xcodeproj */,
+				6F2A6D55827C465BA0D6AD43 /* ReactNativeConfig.xcodeproj */,
 			);
 			name = Libraries;
 			sourceTree = "<group>";
@@ -1141,6 +1143,7 @@
 					"$(SRCROOT)\..\node_modules\react-native-vector-icons\RNVectorIconsManager",
 					"$(SRCROOT)\..\node_modules\react-native-fast-image\ios\FastImage/**",
 					"$(SRCROOT)\..\node_modules\react-native-config\ios\ReactNativeConfig",
+					"$(SRCROOT)\..\node_modules\react-native-config\ios\ReactNativeConfig",
 				);
 			};
 			name = Debug;
@@ -1171,6 +1174,7 @@
 					"$(SRCROOT)\..\node_modules\react-native-vector-icons\RNVectorIconsManager",
 					"$(SRCROOT)\..\node_modules\react-native-fast-image\ios\FastImage/**",
 					"$(SRCROOT)\..\node_modules\react-native-config\ios\ReactNativeConfig",
+					"$(SRCROOT)\..\node_modules\react-native-config\ios\ReactNativeConfig",
 				);
 			};
 			name = Release;
@@ -1195,6 +1199,7 @@
 					"$(SRCROOT)\..\node_modules\react-native-vector-icons\RNVectorIconsManager",
 					"$(SRCROOT)\..\node_modules\react-native-fast-image\ios\FastImage/**",
 					"$(SRCROOT)\..\node_modules\react-native-config\ios\ReactNativeConfig",
+					"$(SRCROOT)\..\node_modules\react-native-config\ios\ReactNativeConfig",
 				);
 			};
 			name = Debug;
@@ -1217,6 +1222,7 @@
 					"$(inherited)",
 					"$(SRCROOT)\..\node_modules\react-native-vector-icons\RNVectorIconsManager",
 					"$(SRCROOT)\..\node_modules\react-native-fast-image\ios\FastImage/**",
+					"$(SRCROOT)\..\node_modules\react-native-config\ios\ReactNativeConfig",
 					"$(SRCROOT)\..\node_modules\react-native-config\ios\ReactNativeConfig",
 				);
 			};
@@ -1257,6 +1263,7 @@
 					"$(SRCROOT)\..\node_modules\react-native-vector-icons\RNVectorIconsManager",
 					"$(SRCROOT)\..\node_modules\react-native-fast-image\ios\FastImage/**",
 					"$(SRCROOT)\..\node_modules\react-native-config\ios\ReactNativeConfig",
+					"$(SRCROOT)\..\node_modules\react-native-config\ios\ReactNativeConfig",
 				);
 			};
 			name = Debug;
@@ -1295,6 +1302,7 @@
 					"$(inherited)",
 					"$(SRCROOT)\..\node_modules\react-native-vector-icons\RNVectorIconsManager",
 					"$(SRCROOT)\..\node_modules\react-native-fast-image\ios\FastImage/**",
+					"$(SRCROOT)\..\node_modules\react-native-config\ios\ReactNativeConfig",
 					"$(SRCROOT)\..\node_modules\react-native-config\ios\ReactNativeConfig",
 				);
 			};
